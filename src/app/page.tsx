@@ -52,7 +52,7 @@ export default function Home() {
                 className="text-left"
               >
                 <h1 className="text-4xl md:text-7xl font-bold font-mono tracking-tighter mb-4 text-white mt-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-                  Kavidu 
+                  Hi I'am Kavidu 
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
                     Dinal
@@ -60,7 +60,7 @@ export default function Home() {
                 </h1>
                 <p className="text-xl md:text-2xl text-acid-lime font-mono tracking-widest uppercase mb-8 h-[32px] flex items-center">
                   <InfiniteTypewriter
-                    words={['AI/ML Enthusiast', 'MLOps Practitioner', 'Aspiring Data Scientist']}
+                    words={['AI/ML Enthusiast', 'MLOps Practitioner', 'Aspiring web Developer', 'Tech Explorer']}
                     className=""
                   />
                 </p>
