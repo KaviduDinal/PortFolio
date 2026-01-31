@@ -19,20 +19,7 @@ live:
 "#",
 },
 
-{
-title: "Smart Bursary",
-description:
-"Scholarship and bursary management platform designed to simplify applications and student fund management.",
 
-image:
-"/projects/bursary.png",
-
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
 
 {
 title: "ConfidFace",
