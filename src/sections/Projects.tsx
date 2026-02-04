@@ -4,100 +4,67 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Github, ExternalLink } from "lucide-react";
 
+import smartBursaryImg from '@/assets/projects/smartbursary.png';
+import confidfaceImg from '@/assets/projects/confidface.png';
+import workoraImg from '@/assets/projects/workora.png';
+import testpilotImg from '@/assets/projects/testpilot.png';
+import schoolarSnapImg from '@/assets/projects/schoolarsnap.png';
+
 const projects = [
 
-{
-title: "Smart Bursary",
-description:
-"Scholarship and bursary management platform designed to simplify applications and student fund management.",
+	{
+		title: "Smart Bursary",
+		description:
+			"Scholarship and bursary management platform designed to simplify applications and student fund management.",
+		image: smartBursaryImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 
-image:
-"/projects/bursary.png",
+	{
+		title: "Community Project",
+		description:
+			"Ongoing collaborative software project developed as part of community contribution and practical teamwork.",
+		image: confidfaceImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 
-github:
-"https://github.com/KaviduDinal",
+	{
+		title: "ConfidFace",
+		description:
+			"AI powered interview preparation platform with facial analysis and confidence evaluation.",
+		image: confidfaceImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 
-live:
-"#",
-},
-    
-{
-title: "Community Project",
-description:
-"Ongoing collaborative software project developed as part of community contribution and practical teamwork.",
+	{
+		title: "WorkOra",
+		description:
+			"Student internship and job finding platform with employer job posting capabilities.",
+		image: workoraImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 
-image: "/projects/community.png",
+	{
+		title: "Test Pilot",
+		description:
+			"Automation testing platform for generating tests and validating applications automatically.",
+		image: testpilotImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
-
-
-
-{
-title: "ConfidFace",
-description:
-"AI powered interview preparation platform with facial analysis and confidence evaluation.",
-
-image:
-"/projects/confidface.png",
-
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
-
-{
-title: "WorkOra",
-description:
-"Student internship and job finding platform with employer job posting capabilities.",
-
-image:
-"/projects/workora.png",
-
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
-
-{
-title: "Test Pilot",
-
-description:
-"Automation testing platform for generating tests and validating applications automatically.",
-
-image:
-"/projects/testpilot.png",
-
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
-
-{
-title: "ScholarSnap",
-
-description:
-"Student and professional test summarizer using AI to simplify learning and preparation.",
-
-image:
-"/projects/scholarsnap.png",
-
-github:
-"https://github.com/KaviduDinal",
-
-live:
-"#",
-},
+	{
+		title: "ScholarSnap",
+		description:
+			"Student and professional test summarizer using AI to simplify learning and preparation.",
+		image: schoolarSnapImg,
+		github: "https://github.com/KaviduDinal",
+		live: "#",
+	},
 ];
 
 export default function Projects() {
