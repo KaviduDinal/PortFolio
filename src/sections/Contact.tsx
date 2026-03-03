@@ -17,7 +17,7 @@ export default function Contact() {
     e.preventDefault();
     const subject = `Portfolio Contact from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:smartchinthaka512@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoLink = `mailto:dinalkavidu5@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
   };
 
@@ -42,7 +42,7 @@ export default function Contact() {
             </p>
             <div className="space-y-6 mt-8">
               <a
-                href="mailto:smartchinthaka512@gmail.com"
+                href="mailto:dinalkavidu5@gmail.com"
                 className="flex items-center gap-4 text-gray-300 hover:text-acid-lime transition-colors group p-3 md:p-4 bg-white/5 rounded-xl border border-white/10 hover:border-acid-lime/30"
               >
                 <div className="p-3 bg-zinc-900 rounded-lg group-hover:bg-acid-lime/10 transition-colors shrink-0">
@@ -50,12 +50,12 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-500 font-mono mb-1">Email</p>
-                  <p className="font-bold break-all">smartchinthaka512@gmail.com</p>
+                  <p className="font-bold break-all">dinalkavidu5@gmail.com</p>
                 </div>
               </a>
 
               <a
-                href="https://www.linkedin.com/in/chinthaka-bandaranayake/"
+                href="https://www.linkedin.com/in/kavidu-dinal-85125a2a8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-gray-300 hover:text-acid-lime transition-colors group p-3 md:p-4 bg-white/5 rounded-xl border border-white/10 hover:border-acid-lime/30"
@@ -65,12 +65,12 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-500 font-mono mb-1">LinkedIn</p>
-                  <p className="font-bold break-all">chinthaka-bandaranayake</p>
+                  <p className="font-bold break-all">kavidu-dinal</p>
                 </div>
               </a>
 
               <a
-                href="https://github.com/chinthaka2000"
+                href="https://github.com/KaviduDinal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-gray-300 hover:text-acid-lime transition-colors group p-3 md:p-4 bg-white/5 rounded-xl border border-white/10 hover:border-acid-lime/30"
@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-gray-500 font-mono mb-1">GitHub</p>
-                  <p className="font-bold break-all">chinthaka2000</p>
+                  <p className="font-bold break-all">KaviduDinal</p>
                 </div>
               </a>
             </div>
