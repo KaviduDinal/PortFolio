@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
+import { useCallback } from 'react';
 import { useNavigation } from '@/context/NavigationContext';
 // import ContentOverlay from '@/components/layout/ContentOverlay'; // REMOVED
 import Navbar from '@/components/layout/Navbar';
@@ -65,10 +66,35 @@ export default function Home() {
                   />
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 items-center mt-0 md:mt-2">
-                  <div className="w-56 px-6 py-2 border border-white/20 rounded-full backdrop-blur-md bg-white/5 flex items-center justify-center">
+                  {/* Download CV: fetches the PDF, opens it in a new tab and triggers a download */}
+                  <button
+                   onClick={useCallback(async (e: React.MouseEvent<HTMLButtonElement>) => {
+                      e.preventDefault();
+                      const url = '/cv.pdf';
+                      try {
+                        const res = await fetch(url);
+                        if (!res.ok) throw new Error('Network response was not ok');
+                        const blob = await res.blob();
+                        const blobUrl = URL.createObjectURL(blob);
+                        window.open(blobUrl, '_blank');
+                        const a = document.createElement('a');
+                        a.href = blobUrl;
+                        a.download = 'Kavidu_CV.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        a.remove();
+                        setTimeout(() => URL.revokeObjectURL(blobUrl), 10000);
+                      } catch (err) {
+                        // fallback: open direct URL in new tab
+                        window.open(url, '_blank');
+                        console.error(err);
+                      }
+                    }, [])}
+                    className="w-56 px-6 py-2 border border-white/20 rounded-full backdrop-blur-md bg-white/5 flex items-center justify-center hover:brightness-110 transition-all"
+                  >
                     <span className="w-2 h-2 rounded-full bg-green-500 inline-block mr-3 animate-pulse"></span>
                     <span className="text-sm font-mono tracking-widest">DOWNLOAD CV</span>
-                  </div>
+                  </button>
 
                   <a
                     href="/skill.md"
