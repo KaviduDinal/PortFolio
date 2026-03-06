@@ -83,11 +83,12 @@ export default function Skills3D() {
     "Tailwind", "Figma", "Jira", "Grafana", "Prometheus"
   ];
 
-  return (
-    <div className="h-[600px] w-full cursor-grab active:cursor-grabbing relative z-10">
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 50 }}>
-        <color attach="background" args={['#050505']} />
-        <fog attach="fog" args={['#050505', 0, 80]} />
+return (
+  <div className="w-full h-[600px] relative">
+    <Canvas
+      style={{ width: "100%", height: "100%" }}
+      camera={{ position: [0, 0, 35], fov: 50 }}
+    >
 
         {/* Ambient environment */}
         <ambientLight intensity={1} />
