@@ -123,7 +123,7 @@ function Decoration() {
         </mesh>
         <mesh rotation={[0, 0, Math.PI / 4]}>
           <torusGeometry args={[1.8, 0.02, 16, 100]} />
-          <meshStandardMaterial color="#D4FF00" transparent opacity={0.1} />
+          <meshStandardMaterial color="#6a0202" transparent opacity={0.1} />
         </mesh>
       </Float>
     </group>

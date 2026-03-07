@@ -17,7 +17,7 @@ export default function HeroImage() {
           scale: { duration: 1, delay: 0.2 },
           opacity: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }
         }}
-        className="absolute rounded-full border-[var(--acid-lime)] bg-transparent shadow-[0_0_30px_rgba(212,255,0,0.2)]
+        className="absolute rounded-full border-[var(--acid-lime)] bg-transparent shadow-[0_0_40px_rgba(139,0,0,0.8)]
           w-[300px] h-[300px]          // [MOBILE] Ring Size (Change these to resize ring on phone)
           top-28                       // [MOBILE] Ring Vertical Position (Change to move up/down)
           border-[6px]                 // [MOBILE] Ring Thickness
