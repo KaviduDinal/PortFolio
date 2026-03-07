@@ -10,7 +10,7 @@ import Providers from '@/components/layout/Providers';
 // const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' });
 
 export const metadata: Metadata = {
-  title: 'Chinthaka Bandaranayake | ML & MLOps Engineer',
+  title: 'Kavidu Dinal | Software  Engineer and AI Enthusiast',
   description: 'Portfolio of Chinthaka Bandaranayake, a Machine Learning and MLOps Engineer specializing in 3D design and AI.',
 };
 

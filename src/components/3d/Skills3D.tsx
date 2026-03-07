@@ -28,7 +28,7 @@ function Word({ children, position }: { children: string; position: THREE.Vector
 
       // Animate color
       (ref.current.material as THREE.MeshStandardMaterial).color.lerp(
-        color.set(hovered ? "#D4FF00" : "#ffffff"),
+        color.set(hovered ? "#6a0202" : "#ffffff"),
         0.1
       );
     }
