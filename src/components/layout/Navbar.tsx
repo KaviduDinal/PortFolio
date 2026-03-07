@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="hidden md:flex relative group">
           {/* Animated Border Container */}
           <div className="absolute -inset-[1px] rounded-full overflow-hidden">
-            <div className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,var(--acid-lime)_50%,#000_100%)] animate-[spin_4s_linear_infinite] opacity-70" />
+            <div className="absolute inset-[-100%] bg-[conic-absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#8B0000_50%,#000_100%)] animate-[spin_4s_linear_infinite] opacity-70"/>
           </div>
 
           {/* Inner Content */}
@@ -46,7 +46,7 @@ export default function Navbar() {
               >
                 <span className="uppercase font-mono">{link.name}</span>
                 {activeSection === link.id && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-acid-lime shadow-[0_0_10px_#D4FF00]"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-acid-lime shadow-[0_0_10px_#D4FF00,0_0_20px_#8B0000]"></span>
                 )}
               </a>
             ))}
