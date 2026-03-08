@@ -32,16 +32,18 @@ export default function About() {
               <h3 className="text-2xl font-bold">The Developer</h3>
             </div>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I’m passionate about designing and building <span className="text-white font-semibold">end-to-end machine learning systems</span> that create real-world impact. My focus goes beyond model development — I work across the full ML lifecycle, from data and experimentation to deployment, monitoring, and continuous improvement.
+              I’m passionate about building <span className="text-white font-semibold">modern web applications and exploring intelligent systems</span> I’m passionate about building software that creates real-world impact.
+              My interests lie in Artificial Intelligence, Machine Learning, Web Development,
+              and Cloud technologies, where ideas are transformed into scalable solutions.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I’m particularly interested in the intersection of <span className="text-acid-lime">Artificial Intelligence, Machine Learning, MLOps, and scalable system design</span>, where intelligent models are transformed into reliable, production-ready solutions aligned with business goals.
+              I’m particularly interested in the intersection of <span className="text-acid-lime">Artificial Intelligence, Machine Learning, Web Development, and Cloud technologies,</span>,where innovative ideas are transformed into scalable and impactful digital solutions.
             </p>
 
             <div className="mb-6">
-              <p className="text-lg text-gray-300 mb-3">I enjoy approaching ML as an engineering discipline, with an emphasis on:</p>
+              <p className="text-lg text-gray-300 mb-3">I enjoy building software systems with an engineering discipline, with an emphasis on:</p>
               <div className="flex flex-wrap gap-2">
-                {['Reproducibility', 'Scalability', 'Automation', 'Performance Measurement', 'Maintainability'].map(item => (
+                {['Problem Solving', 'Scalability', 'Automation', 'Continuous Learning', 'Maintainability', 'Clean Code'].map(item => (
                   <span key={item} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-acid-lime font-mono">
                     {item}
                   </span>
@@ -50,12 +52,12 @@ export default function About() {
             </div>
 
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I’m continuously exploring better ways to move from experimentation to production and to build robust, data-driven systems that deliver measurable value.
-            </p>
+              I’m always open to collaborating on innovative projects, contributing to
+              real-world software solutions, and connecting with developers who are
+              passionate about web development, AI, and emerging technologies.            </p>
 
             <p className="text-lg text-gray-300 leading-relaxed italic border-l-2 border-acid-lime pl-4">
-              I’m always open to collaborating on innovative projects, contributing to real-world ML applications, and connecting with people who are working on production ML, MLOps, and applied AI solutions.
-            </p>
+              I’m always open to collaborating on innovative projects, contributing to real-world software solutions, and connecting with developers who are passionate about web development, artificial intelligence, and emerging technologies.            </p>
           </motion.div>
 
           {/* 2. Tech Stack - Tall Card */}
@@ -70,7 +72,7 @@ export default function About() {
               <Cpu className="w-16 h-16 text-acid-lime animate-pulse-slow" />
               <h3 className="text-xl font-bold">Core Stack</h3>
               <div className="flex flex-wrap justify-center gap-2">
-                {['Python', 'TensorFlow', 'PyTorch', 'Docker', 'Kubernetes', 'H2O', 'Next.js'].map(tech => (
+                {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React','Next.js','React Native','Native Wind','Express','Java','Mongo DB', 'Node.js', 'Python','Tailwind CSS','Git'].map(tech => (
                   <span key={tech} className="px-3 py-1 rounded-full bg-white/5 text-sm font-mono border border-white/10">
                     {tech}
                   </span>
@@ -89,8 +91,8 @@ export default function About() {
           >
             <GraduationCap className="text-acid-lime w-8 h-8 mb-4" />
             <h3 className="text-xl font-bold mb-2">Education</h3>
-            <p className="text-gray-400 text-sm">BSc (Hons) in Computer Science</p>
-            <p className="text-gray-500 text-xs mt-1">Specializing in AI & Data Science</p>
+            <p className="text-gray-400 text-sm">BSc (Hons) in Software Engineering</p>
+            <p className="text-gray-500 text-xs mt-1">Specializing Software Development & AI Technologies</p>
           </motion.div>
 
           {/* 4. Interests - Small Card */}
@@ -103,7 +105,8 @@ export default function About() {
           >
             <Brain className="text-acid-lime w-8 h-8 mb-4" />
             <h3 className="text-xl font-bold mb-2">Interests</h3>
-            <p className="text-gray-400 text-sm">End-to-End Business Aligned Systems, MLOps, Scalable AI Infrastructure</p>
+            <p className="text-gray-400 text-sm">Artificial Intelligence, Machine Learning,
+              Web Development, Cloud Technologies</p>
           </motion.div>
 
           {/* 5. Location/Status - Small Card */}

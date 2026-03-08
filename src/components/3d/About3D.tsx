@@ -29,7 +29,7 @@ function Laptop() {
       <group position={[0, 0.5, -0.9]} rotation={[0.4, 0, 0]}>
         <mesh geometry={new THREE.BoxGeometry(3, 2, 0.1)} material={new THREE.MeshStandardMaterial({ color: "#111" })} />
         <mesh position={[0, 0, 0.06]} geometry={new THREE.PlaneGeometry(2.8, 1.8)}>
-          <meshBasicMaterial color="#6a0202" />
+          <meshBasicMaterial color="#D9FF00" />
         </mesh>
       </group>
     </group>
