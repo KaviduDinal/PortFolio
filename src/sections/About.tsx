@@ -34,7 +34,7 @@ export default function About() {
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
               I’m passionate about building <span className="text-white font-semibold">modern web applications and exploring intelligent systems</span> I’m passionate about building software that creates real-world impact.
               My interests lie in Artificial Intelligence, Machine Learning, Web Development,
-              and Cloud technologies, where ideas are transformed into scalable solutions.
+              and Cloud technologies and Devops, where ideas are transformed into scalable solutions.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
               I’m particularly interested in the intersection of <span className="text-acid-lime">Artificial Intelligence, Machine Learning, Web Development, and Cloud technologies,</span>,where innovative ideas are transformed into scalable and impactful digital solutions.
