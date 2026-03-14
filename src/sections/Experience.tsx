@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { experience, education, certifications } from "@/data/experience";
 import { Briefcase, Calendar, Award, GraduationCap, ChevronDown, ChevronUp } from "lucide-react";
 
-import EducationLottie from "@/components/ui/EducationLottie";
+
 
 export default function Experience() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -91,7 +91,7 @@ export default function Experience() {
             </div>
 
             {/* LOTTIE ANIMATION */}
-            <EducationLottie />
+           
           </div>
 
         </div>
