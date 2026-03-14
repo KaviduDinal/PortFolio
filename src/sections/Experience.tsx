@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { experience, education, certifications } from "@/data/experience";
+import EducationLottie from '@/components/ui/EducationLottie';
 import { Briefcase, Calendar, Award, GraduationCap, ChevronDown, ChevronUp } from "lucide-react";
 
 
@@ -90,7 +91,10 @@ export default function Experience() {
               ))}
             </div>
 
-            {/* LOTTIE ANIMATION */}
+            {/* Education card slider */}
+            <div className="mt-6">
+              <EducationLottie />
+            </div>
            
           </div>
 
