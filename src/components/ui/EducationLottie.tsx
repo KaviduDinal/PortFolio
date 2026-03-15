@@ -9,12 +9,15 @@ export default function EducationLottie() {
 	const [photoIndex, setPhotoIndex] = useState(0);
 
 	const photos = [
-		"/me.png",
-		"/next.svg",
-		"/globe.svg",
-		"/file.svg",
-		"/window.svg",
-		"/vercel.svg",
+		"/assets/images/First.png",
+		"/assets/images/Two.png",
+		"/assets/images/Three.png",
+		"/assets/images/Four.png",
+		"/assets/images/Five.png",
+		"/assets/images/Six.png",
+		"/assets/images/Seven.png",
+		"/assets/images/Eight.png",
+		"/assets/images/Nine.png",
 	];
 
 	// text card auto-advance removed
@@ -27,20 +30,20 @@ export default function EducationLottie() {
 	}, []);
 
 	return (
-		<div className="w-full max-w-lg mx-auto">
+		<div className="w-full max-w-4xl mx-auto">
 			<div className="relative">
 				{/* text cards removed; showing photo carousel below */}
 
 				{/* Photo transit card */}
-				<div className="mt-6">
-					<div className="w-full max-w-md mx-auto">
+				<div className="mt-50">
+					<div className="w-full max-w-3xl mx-auto">
 						<div className="relative rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg">
 							<AnimatePresence initial={false} mode="wait">
 								<motion.img
 									key={photoIndex}
 									src={photos[photoIndex]}
 									alt={`photo-${photoIndex}`}
-									className="w-full h-40 object-cover bg-gray-100 dark:bg-gray-900"
+									className="w-full h-96 object-cover bg-gray-100 dark:bg-gray-900"
 									initial={{ opacity: 0, x: 30 }}
 									animate={{ opacity: 1, x: 0 }}
 									exit={{ opacity: 0, x: -30 }}
