@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140">
+  <rect x="6" y="6" width="108" height="128" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <path d="M6 36h72v0" stroke="#cbd5e1"/>
+  <text x="60" y="90" text-anchor="middle" fill="#475569" font-size="18">FILE</text>
+</svg>
