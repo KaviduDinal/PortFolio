@@ -35,7 +35,8 @@ export default function CertificateCarousel() {
             key={index}
             src={certImages[index].src}
             alt={certImages[index].title}
-            className="w-full h-52 sm:h-64 object-cover bg-gray-100 dark:bg-gray-900"
+            className="w-full h-72 sm:h-96 object-cover bg-gray-100 dark:bg-gray-900"
+
             initial={{ opacity: 0, x: 50 * direction, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -50 * direction, scale: 0.98 }}
