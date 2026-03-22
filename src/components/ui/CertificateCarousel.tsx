@@ -35,6 +35,7 @@ export default function CertificateCarousel() {
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={index}
+
             initial={{ opacity: 0, x: 50 * direction, scale: 0.98 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -50 * direction, scale: 0.98 }}
