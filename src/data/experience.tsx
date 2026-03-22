@@ -71,11 +71,15 @@ export const education: EducationItem[] = [
 
 export const certifications: CertificationItem[] = [
   { id: 1, name: "Work Apreciate Society of Computer Sciences  As The Committee Member in 2024/2025", issuer: "Society of Computer Sciences", date: "Dec 2025", url: "#" },
-  { id: 2, name: "AWS Certified AI Practitioner", issuer: "kodeKloud", date: "Feb 2026", url: "#", image: "/assets/images/Two.png" },
-  { id: 3, name: "IX 24 Inter-University Designathon", issuer: " IEEE Student Branch of Informatics Institute of Technology (IIT) ", date: "Sep 2024", url: "#", image: "/assets/Certificates/Ix.png" },
-  { id: 4, name: "Hackventure 2024 — Semifinalist ", issuer: "AIESEC in University of Kelaniya", date: "Aug 2024", url: "#", image: "/assets/images/Four.png" },
-  { id: 5, name: "AlgoXplore 1.0-Algorithm & CTF Challenge", issuer: "Hackathon Hub — NSBM Green University", date: "May 2024", url: "#", image: "/assets/Certificates/Algo.png" },
-  { id: 6, name: "Appriciation of Technical Assistant-Conference Volunteer(ICMR-2024)", issuer: "Faculty of Management Studies, Sabaragamuwa University of Sri Lanka", date: "Nov 2024", url: "#" },
-  { id: 7, name: "Introdution to AI/ML Toolkit With Kubeflow from The Linux Foundation.", issuer: " Linux Foundation ", date: "Mar 2026", url: "#" },
+  { id: 2, name: "AWS Certified AI Practitioner", issuer: "kodeKloud", date: "Feb 2026", url: "#" },
+  { id: 3, name: "Microsoft Devops Engineer Expert Ultimate Course", issuer: "Udemy", date: "Mar 2026", url: "#" },
+  { id: 4, name: "IX 24 Inter-University Designathon", issuer: " IEEE Student Branch of Informatics Institute of Technology (IIT) ", date: "Sep 2024", url: "#", image: "/assets/Certificates/Ix.png" },
+  { id: 5, name: "Hackventure 2024 — Semifinalist ", issuer: "AIESEC in University of Kelaniya", date: "Aug 2024", url: "#", image: "/assets/images/Four.png" },
+  { id: 6, name: "AlgoXplore 1.0-Algorithm & CTF Challenge", issuer: "Hackathon Hub — NSBM Green University", date: "May 2024", url: "#", image: "/assets/Certificates/Algo.png" },
+  { id: 7, name: "Appriciation of Technical Assistant-Conference Volunteer(ICMR-2024)", issuer: "Faculty of Management Studies, Sabaragamuwa University of Sri Lanka", date: "Nov 2024", url: "#" },
+  { id: 8, name: "Introdution to AI/ML Toolkit With Kubeflow from The Linux Foundation.", issuer: " Linux Foundation ", date: "Mar 2026", url: "#" },
+  { id: 9, name: "Microsoft Power Business Intelligence Certificate", issuer: "Microsoft", date: "Apr 2026", url: "#" },
+  { id: 10, name: "Interdeciplinary Conference of Management Researchers", issuer: "Faculty of Management Studies – Sabaragamuwa University of Sri Lanka", date: "Nov 2024", url: "#" }
+
 
 ];
