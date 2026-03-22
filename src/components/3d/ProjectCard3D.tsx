@@ -15,16 +15,17 @@ type ProjectCardProps = {
 function Card({ title, description, tech, color }: ProjectCardProps) {
   const meshRef = useRef<THREE.Group>(null!);
   const [hovered, setHovered] = useState(false);
+  const targetRot = useRef({ x: 0, y: 0, s: 1 });
 
   useFrame((state, delta) => {
     if (meshRef.current) {
-      const targetRotationY = hovered ? Math.PI / 12 : 0;
-      const targetRotationX = hovered ? -Math.PI / 12 : 0;
-      const targetScale = hovered ? 1.05 : 1;
-
-      meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, targetRotationY, delta * 3);
-      meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, targetRotationX, delta * 3);
-      meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), delta * 5);
+      // Smoothly interpolate toward the cursor-driven target rotations/scale
+      meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, targetRot.current.y, delta * 8);
+      meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, targetRot.current.x, delta * 8);
+      const currentScale = meshRef.current.scale.x;
+      const goalScale = targetRot.current.s;
+      const nextScale = THREE.MathUtils.lerp(currentScale, goalScale, delta * 6);
+      meshRef.current.scale.set(nextScale, nextScale, nextScale);
     }
   });
 
@@ -32,8 +33,34 @@ function Card({ title, description, tech, color }: ProjectCardProps) {
     <Float speed={2} rotationIntensity={0.2} floatIntensity={0.2}>
       <group
         ref={meshRef}
-        onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
+        onPointerOver={(e) => {
+          e.stopPropagation();
+          setHovered(true);
+          targetRot.current.s = 1.06;
+        }}
+        onPointerOut={(e) => {
+          e.stopPropagation();
+          setHovered(false);
+          // reset targets
+          targetRot.current.x = 0;
+          targetRot.current.y = 0;
+          targetRot.current.s = 1;
+        }}
+        onPointerMove={(e: any) => {
+          // Convert the pointer intersection point to the group's local space
+          if (!meshRef.current) return;
+          const p = e.point.clone();
+          meshRef.current.worldToLocal(p);
+
+          // p.x and p.y are in local units based on the mesh geometry size (~3.8x5.2)
+          // Map them to small rotation angles
+          const maxRot = 0.25; // radians (~14deg)
+          const rx = THREE.MathUtils.clamp(-p.y / 3.5 * maxRot, -maxRot, maxRot);
+          const ry = THREE.MathUtils.clamp(p.x / 2.0 * maxRot, -maxRot, maxRot);
+          targetRot.current.x = rx;
+          targetRot.current.y = ry;
+          targetRot.current.s = 1.06;
+        }}
       >
         {/* Glass Card Background */}
         <mesh position={[0, 0, 0]}>
