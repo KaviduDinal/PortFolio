@@ -27,25 +27,26 @@ function Word({ children, position }: { children: string; position: THREE.Vector
       ref.current.quaternion.copy(camera.quaternion);
 
       // Animate color
-      (ref.current.material as THREE.MeshStandardMaterial).color.lerp(
-        color.set(hovered ? "#6a0202" : "#ffffff"),
-        0.1
-      );
+      const mat = ref.current.material as any;
+mat.color.lerp(
+  color.set(hovered ? "#ff0000" : "#ffffff"),
+  0.1
+);
     }
   });
 
   return (
     <Float floatIntensity={2} rotationIntensity={0.5}>
-      <Text
-        ref={ref}
-        onPointerOver={over}
-        onPointerOut={out}
-        position={position}
-        {...fontProps}
-      >
-        {children}
-        <meshStandardMaterial emissive="#333333" emissiveIntensity={0.5} />
-      </Text>
+<Text
+  ref={ref}
+  onPointerOver={over}
+  onPointerOut={out}
+  position={position}
+  {...fontProps}
+>
+  {children}
+  <meshStandardMaterial emissive="#333333" emissiveIntensity={0.5} />
+</Text>
     </Float>
   );
 }
@@ -85,23 +86,25 @@ export default function Skills3D() {
 
 return (
   <div className="w-full h-[600px] relative">
-    <Canvas
-      style={{ width: "100%", height: "100%" }}
-      camera={{ position: [0, 0, 35], fov: 50 }}
-    >
+<Canvas
+  style={{ width: "100%", height: "100%" }}
+  camera={{ position: [0, 0, 35], fov: 50 }}
+>
+  {/* ✅ Background (IMPORTANT) */}
+  <color attach="background" args={["#000000"]} />
 
-        {/* Ambient environment */}
-        <ambientLight intensity={1} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+  {/* ✅ Lighting */}
+  <ambientLight intensity={2} />
 
-        {/* Stars for background depth */}
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+  {/* ❌ REMOVE Stars TEMPORARILY */}
+  {/* ❌ REMOVE pointLight */}
 
-        <Cloud words={skills} />
+  {/* ✅ Show skills */}
+  <Cloud words={skills} />
 
-        {/* Auto-rotating controls */}
-        <OrbitControls autoRotate autoRotateSpeed={0.5} enableZoom={false} />
-      </Canvas>
+  {/* ✅ Controls */}
+  <OrbitControls autoRotate autoRotateSpeed={1} enableZoom={false} />
+</Canvas>
     </div>
   );
 }
