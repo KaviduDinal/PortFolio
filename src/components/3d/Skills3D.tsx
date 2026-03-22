@@ -22,31 +22,24 @@ function Word({ children, position }: { children: string; position: THREE.Vector
   };
 
   useFrame(({ camera }) => {
-    if (ref.current) {
-      // Make text look at camera
-      ref.current.quaternion.copy(camera.quaternion);
-
-      // Animate color
-      const mat = ref.current.material as any;
-mat.color.lerp(
-  color.set(hovered ? "#ff0000" : "#ffffff"),
-  0.1
-);
-    }
-  });
+  if (ref.current) {
+    ref.current.quaternion.copy(camera.quaternion);
+  }
+});
 
   return (
     <Float floatIntensity={2} rotationIntensity={0.5}>
-<Text
-  ref={ref}
-  onPointerOver={over}
-  onPointerOut={out}
-  position={position}
-  {...fontProps}
->
-  {children}
-  <meshStandardMaterial emissive="#333333" emissiveIntensity={0.5} />
-</Text>
+      <Text
+        ref={ref}
+        position={position}
+        fontSize={2}
+        color={hovered ? "#ff0000" : "#ffffff"}
+      
+        onPointerOver={over}
+        onPointerOut={out}
+      >
+        {children}
+      </Text>
     </Float>
   );
 }
@@ -84,27 +77,17 @@ export default function Skills3D() {
     "Tailwind", "Figma", "Jira", "Grafana", "Prometheus"
   ];
 
-return (
-  <div className="w-full h-[600px] relative">
-<Canvas
-  style={{ width: "100%", height: "100%" }}
-  camera={{ position: [0, 0, 35], fov: 50 }}
->
-  {/* ✅ Background (IMPORTANT) */}
-  <color attach="background" args={["#000000"]} />
+  return (
+    <div className="w-full h-[600px] relative">
+      <Canvas camera={{ position: [0, 0, 35], fov: 50 }}>
+        <color attach="background" args={["black"]} />
 
-  {/* ✅ Lighting */}
-  <ambientLight intensity={2} />
+        <ambientLight intensity={2} />
 
-  {/* ❌ REMOVE Stars TEMPORARILY */}
-  {/* ❌ REMOVE pointLight */}
+        <Cloud words={skills} />
 
-  {/* ✅ Show skills */}
-  <Cloud words={skills} />
-
-  {/* ✅ Controls */}
-  <OrbitControls autoRotate autoRotateSpeed={1} enableZoom={false} />
-</Canvas>
+        <OrbitControls autoRotate autoRotateSpeed={1} enableZoom={false} enablePan={false} />
+      </Canvas>
     </div>
   );
 }

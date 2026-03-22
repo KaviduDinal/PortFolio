@@ -10,7 +10,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
 
   // REPLACE THIS WITH YOUR GITHUB USERNAME
-  const GITHUB_USERNAME = "chinthaka2000";
+  const GITHUB_USERNAME = "KaviduDinal";
 
   useEffect(() => {
     async function loadRepos() {
