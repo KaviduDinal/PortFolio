@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import emailjs from "@emailjs/browser";
 
 const Contact3D = dynamic(() => import('@/components/3d/Contact3D'), { ssr: false });
 
@@ -13,14 +14,52 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = `Portfolio Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    const mailtoLink = `mailto:dinalkavidu5@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
-  };
+const handleSubmit = async (
+e: React.FormEvent
+)=>{
 
+e.preventDefault();
+
+try{
+
+await emailjs.send(
+
+process.env
+.NEXT_PUBLIC_EMAIL_SERVICE!,
+
+process.env
+.NEXT_PUBLIC_EMAIL_TEMPLATE!,
+
+{
+name:formData.name,
+email:formData.email,
+message:formData.message,
+},
+
+process.env
+.NEXT_PUBLIC_EMAIL_PUBLIC!
+
+);
+
+alert("Email Sent!");
+
+setFormData({
+name:"",
+email:"",
+message:"",
+});
+
+}
+
+catch(error){
+
+console.log(error);
+
+alert("Failed to send");
+
+}
+
+};
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };

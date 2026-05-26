@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: 'Projects', id: 'PROJECTS' },
     { name: 'Skills', id: 'SKILLS' },
     { name: 'Contact', id: 'CONTACT' },
+    { name: 'Blogs', id: 'BLOGS', external: true, url: 'https://medium.com/@kavidudnl' },
   ];
 
   return (
@@ -38,17 +39,31 @@ export default function Navbar() {
           {/* Inner Content */}
           <div className="relative flex space-x-8 items-center bg-black/80 backdrop-blur-md px-8 py-3 rounded-full border border-white/5">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={`#${link.id.toLowerCase()}`} // Changed to anchor tag with href
-                className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-acid-lime relative group ${activeSection === link.id ? 'text-acid-lime' : 'text-gray-300'
-                  }`}
-              >
-                <span className="uppercase font-mono">{link.name}</span>
-                {activeSection === link.id && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-acid-lime shadow-[0_0_10px_#D4FF00,0_0_20px_#8B0000]"></span>
-                )}
-              </a>
+              link.external ? (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium tracking-wide transition-all duration-300 relative group"
+                >
+                  <span className="uppercase font-mono">
+                    <span className="inline-block px-4 py-2 rounded-full bg-red-600 text-white hover:bg-red-700">{link.name}</span>
+                  </span>
+                </a>
+              ) : (
+                <a
+                  key={link.name}
+                  href={`#${link.id.toLowerCase()}`} // Changed to anchor tag with href
+                  className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-acid-lime relative group ${activeSection === link.id ? 'text-acid-lime' : 'text-gray-300'
+                    }`}
+                >
+                  <span className="uppercase font-mono">{link.name}</span>
+                  {activeSection === link.id && (
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-acid-lime shadow-[0_0_10px_#D4FF00,0_0_20px_#8B0000]"></span>
+                  )}
+                </a>
+              )
             ))}
           </div>
         </div>
@@ -66,15 +81,28 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-xl border-t border-white/10 p-6 flex flex-col space-y-4 shadow-2xl">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={`#${link.id.toLowerCase()}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={`block text-lg font-medium text-left ${activeSection === link.id ? 'text-acid-lime' : 'text-gray-300'
-                }`}
-            >
-              {link.name}
-            </a>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block text-lg font-medium text-left`}
+              >
+                <span className="inline-block px-4 py-2 rounded-full bg-red-600 text-white">{link.name}</span>
+              </a>
+            ) : (
+              <a
+                key={link.name}
+                href={`#${link.id.toLowerCase()}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block text-lg font-medium text-left ${activeSection === link.id ? 'text-acid-lime' : 'text-gray-300'
+                  }`}
+              >
+                {link.name}
+              </a>
+            )
           ))}
         </div>
       )}
