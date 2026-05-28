@@ -67,7 +67,7 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row gap-4 items-center mt-0 md:mt-2">
                   <div className="w-56 px-6 py-2 border border-white/20 rounded-full backdrop-blur-md bg-white/5 flex items-center justify-center">
                     <span className="w-2 h-2 rounded-full bg-green-500 inline-block mr-3 animate-pulse"></span>
-                    <span className="text-sm font-mono tracking-widest">SYSTEM ONLINE</span>
+                    <span className="text-sm font-mono tracking-widest">DOWNLOAD CV</span>
                   </div>
 
                   <a
